@@ -10,6 +10,7 @@ export async function GET(request,{params}) {
   return NextResponse.json(notes);
 }
 
+
 export async function PUT(request,{params}) {
   try{
     const { title, content, completed} = await request.json()

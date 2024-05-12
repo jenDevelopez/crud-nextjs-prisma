@@ -13,13 +13,13 @@ export async function GET(request,{params}) {
 
 export async function PUT(request,{params}) {
   try{
-    const { title, content, completed} = await request.json()
+    const { title, content} = await request.json()
     const updatedNote = await prisma.note.update({
       where:{
         id: Number(params.id)
       },
       data:{
-        title,content,completed
+        title,content
       }
     })
     return NextResponse.json(updatedNote)
